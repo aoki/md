@@ -34,7 +34,6 @@ const newWin = () => {
 		titleBarStyle: 'hidden'
 	})
 	win.setVibrancy('ultra-dark')
-	win.maximize()
 	win.on('closed', () => win = null)
 	if (config.dev) {
 		// Install vue dev tool and open chrome dev tools

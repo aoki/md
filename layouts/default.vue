@@ -1,14 +1,19 @@
 <template>
-	<div>
-		<div id="drag-space"></div>
-		<nuxt/>
-	</div>
+  <div id="layout-container">
+    <div id="drag-space"></div>
+    <nuxt/>
+  </div>
 </template>
 
 <style>
-#drag-space {
-	-webkit-app-region: drag;
-	height: 20px;
-	width: 100%;
-}
+  #layout-container {
+    width: inherit;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+  }
+  #drag-space {
+    -webkit-app-region: drag;
+    flex-basis: 24px;
+  }
 </style>

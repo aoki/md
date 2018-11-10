@@ -1,31 +1,56 @@
 <template>
-	<section class="container">
-		<div>
-			<img width="256" src="~/assets/img/logo.png">
-			<h1>md</h1>
-			<h2>Nuxt + Electron</h2>
-			<a href="https://nuxtjs.org/" target="_blank" class="btn btn-primary">Documentation</a>
-			<a href="https://github.com/nuxt/nuxt.js" target="_blank" class="btn btn-primary">GitHub</a>
-			<a href="https://electronjs.org/" target="_blank" class="btn btn-secondary">Electron</a>
-			<a href="https://github.com/electron-userland/electron-builder" target="_blank" class="btn btn-secondary">Electron Builder</a>
-		</div>
-	</section>
+  <div id="main-container">
+    <vue-split
+      id="split"
+      :elements="[
+      '#editor',
+      '#preview'
+    ]"
+      direction="horizontal"
+      :min-size="100"
+      :gutter-size="1"
+      :snap-offset="50"
+    >
+      <div id="editor">
+        <p>Editor</p>
+      </div>
+      <div id="preview">
+        <p>Preview</p>
+      </div>
+    </vue-split>
+  </div>
 </template>
 
 <script>
+import VueSplit from 'vue-splitjs'
+
 export default {
+  components: {VueSplit},
 }
 </script>
 
 <style scoped>
-.container {
-	min-height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-}
-.btn {
-	margin: 0 8px;
-}
+  .gutter {
+    background-color: red !important;
+  }
+  #main-container {
+    flex-basis: 100%;
+  }
+  #split {
+    /*background: red;*/
+    display: flex;
+    height: 100%;
+  }
+
+  #editor {
+    /*background: #00b786;*/
+    flex-grow: 1;
+    padding: 4px;
+  }
+
+  #preview {
+    /*background: #8ceaf6;*/
+    flex-grow: 1;
+    padding: 4px;
+  }
 </style>
